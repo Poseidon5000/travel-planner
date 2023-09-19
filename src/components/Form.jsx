@@ -1,21 +1,20 @@
 import React, { useState } from 'react'
-import PackingList from './PackingList';
 
 
-const Form = () => {
+const Form = ({handleAddItems}) => {
     const [description, setDescription] = useState("");
     const [selectedItem, setSelectedItem] = useState(1);
-    const [parkingItems, setParkingItems] = useState([])
+    
     
     function handleSubmit(e) {
         e.preventDefault()
         if(!description) return
         const newItem = {description, selectedItem, packed:false, id:Date.now()}
-        setParkingItems([...parkingItems, newItem]);
+        handleAddItems(newItem)
         setDescription("")
         setSelectedItem(1)
-     
     }
+
 
     function handleChange(e){
         setDescription(e.target.value)
@@ -42,7 +41,7 @@ const Form = () => {
 
         
     </form>
-    <PackingList parkingItems = {parkingItems}/>
+   
     </>
   )
 }

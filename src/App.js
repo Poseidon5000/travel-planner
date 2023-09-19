@@ -30,7 +30,7 @@ function handleToggleItem (id){
      
     <Logo/>
     <Form handleAddItems={handleAddItems}/>
-    <PackingList parkingItems={parkingItems} handleDelete={handleDelete} handleToggleItem={handleToggleItem}/>
+    <PackingList parkingItems={parkingItems} handleDelete={handleDelete} handleToggleItem={handleToggleItem} setParkingItems= {setParkingItems}/>
     <Stats parkingItems={parkingItems}/>
   
     </div>
